@@ -5,7 +5,7 @@ echo "Local App Root Dir: ${local_app_root_dir}"
 
 # make the log files writable by apache
 chown -R www-data ${local_app_root_dir}/logs
-chown -R www-data ${local_app_root_dir}/logs
+chown -R www-data ${local_app_root_dir}/upload_area
 
 docker run \
 --name testlink  \
@@ -14,7 +14,7 @@ docker run \
 --volume ${local_app_root_dir}/logs:/var/testlink/logs \
 --volume ${local_app_root_dir}/upload_area:/var/testlink/upload_area \
 --restart=always \
--d ssqatestlink
+-d ssqa-testlink
 
 
 # docker run \
