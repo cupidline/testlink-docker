@@ -4,8 +4,7 @@ local_app_root_dir=${PWD}
 echo "Local App Root Dir: ${local_app_root_dir}"
 
 # make the log files writable by apache
-chown -R www-data ${local_app_root_dir}/logs
-chown -R www-data ${local_app_root_dir}/upload_area
+chown -R www-data ${local_app_root_dir}/*
 
 docker run \
 --name testlink  \
