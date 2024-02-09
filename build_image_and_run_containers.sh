@@ -15,3 +15,6 @@ docker-compose up -d
 
 # display container info
 docker ps
+
+# make the volumes writable by webserver user
+chown -R www-data ${VOLUME_DIR_TESTLINK}
