@@ -9,7 +9,7 @@ services:
     depends_on:
       - mysql_testlink
     volumes:
-      - ./testlink_data:/var/www/html # Bind mount for TestLink
+      - .:/var/www/html # Bind mount for TestLink
 
   mysql_testlink:
     image: mysql:5.7
