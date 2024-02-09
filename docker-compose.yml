@@ -7,11 +7,11 @@ services:
       - "7777:8080"
       - "443:443"
     depends_on:
-      - mysql_compose_1
+      - mysql_testlink
     volumes:
-      - ./testlink_data:/bitnami/testlink # Bind mount for TestLink
+      - ./testlink_data:/var/www/html # Bind mount for TestLink
 
-  mysql_compose_1:
+  mysql_testlink:
     image: mysql:5.7
     environment:
       - MYSQL_ROOT_PASSWORD=rootpassword
