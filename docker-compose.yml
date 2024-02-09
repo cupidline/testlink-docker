@@ -2,16 +2,18 @@ version: '3.1'
 
 services:
   testlink:
-    image: supersqa/testlink:1.9.20
+    image: ${IMAGE_NAME}
     ports:
       - "7777:8080"
       - "443:443"
     depends_on:
       - mysql_testlink
     volumes:
-      - ./volume_testlink/templates_c:/var/www/html/gui/templates_c
+      - ./volume_testlink/gui/templates_c:/var/www/html/gui/templates_c
       - ./volume_testlink/logs:/var/www/html/logs
       - ./volume_testlink/upload_area:/var/www/html/upload_area
+    environment:
+      - IMAGE_NAME=${IMAGE_NAME}
 
   mysql_testlink:
     image: mysql:5.7
@@ -20,5 +22,4 @@ services:
     ports:
       - 3301:3306
     volumes:
-      - ./volume_mysql:/var/lib/mysql # Bind mount for MySQL
-
+      - ./volume_mysql:/var/lib/mysql
