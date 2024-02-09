@@ -1,3 +1,37 @@
+# SuperSQA's Added Read Me
+* Forked this repo from: https://github.com/TestLinkOpenSourceTRMS/testlink-code
+* Added my own custom
+  * Dockerfile
+  * docker-compose.yml
+  * run_testlink_container.sh
+
+## Info:
+* Created my own Dockerfile to be able to use Apache base image
+* To run the container create your own image using Dockerfile in this repo or just use published image.
+  * Image: supersqa/testlink:1.9.20 (https://hub.docker.com/repository/docker/supersqa/testlink/general)
+* To build your own image
+```commandline
+cd <to this repo>
+docker build -t <your image name> .
+```
+* To run containers using docker-compose
+* IMPORTANT: Make sure to update the MYSQL_ROOT_PASSWORD variable in the docker-compose.yml
+```commandline
+cd <to tis repo>
+docker-compose up -d
+```
+
+
+#########################################################################
+#########################################################################
+#########                                                         #######
+######### BELOW THIS LINE IS ORIGINAL README FROM THE MAINTAINERS #######
+#########                                                         #######
+#########################################################################
+#########################################################################
+
+
+
 # IMPORTANT NOTICE
 1.9.20 will be the last version of the 1.9.x family.  
 Next TestLink version will 2.x with a new UX based on the Dashio - Bootstrap Admin Template (https://templatemag.com/dashio-bootstrap-admin-template/)

@@ -1,0 +1,22 @@
+version: '3.1'
+
+services:
+  testlink_compose:
+    image: supersqa/testlink:1.9.20
+    ports:
+      - "7777:8080"
+      - "443:443"
+    depends_on:
+      - mysql_compose_1
+    volumes:
+      - ./testlink_data:/bitnami/testlink # Bind mount for TestLink
+
+  mysql_compose_1:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpassword
+    ports:
+      - 3301:3306
+    volumes:
+      - ./mysql_data:/var/lib/mysql # Bind mount for MySQL
+
