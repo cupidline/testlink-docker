@@ -9,17 +9,19 @@ services:
     depends_on:
       - mysql_testlink
     volumes:
-      - ./volume_testlink/gui/templates_c:/var/www/html/gui/templates_c
-      - ./volume_testlink/logs:/var/www/html/logs
-      - ./volume_testlink/upload_area:/var/www/html/upload_area
+      - ${VOLUME_DIR_TESTLINK}/gui/templates_c:/var/www/html/gui/templates_c
+      - ${VOLUME_DIR_TESTLINK}/logs:/var/testlink/logs
+      - ${VOLUME_DIR_TESTLINK}/upload_area:/var/www/html/upload_area
     environment:
       - IMAGE_NAME=${IMAGE_NAME}
+      - VOLUME_DIR_TESTLINK=${VOLUME_DIR_TESTLINK}
 
   mysql_testlink:
     image: mysql:5.7
-    environment:
-      - MYSQL_ROOT_PASSWORD=rootpassword
     ports:
       - 3301:3306
     volumes:
-      - ./volume_mysql:/var/lib/mysql
+      - ${VOLUME_DIR_MYSQL}:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpassword
+      - VOLUME_DIR_MYSQL=${VOLUME_DIR_MYSQL}
