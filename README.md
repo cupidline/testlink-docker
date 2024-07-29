@@ -29,7 +29,7 @@ docker-compose up -d
 5. In Verification of System and configuration requirements click next
 6. In Definition of DB, choose DB as MySQL, link database host to `mysql_testlink:3306`, database admin login with `root:[MYSQL_ROOT_PASSWORD_IN_DOCKER_COMPOSE]`, and Testlink DB `user:password`
 7. will get error connection to database before login
-8. Go to MySQL
+8. Go to MySQL with user and password from docker compose (root:11nowayrunway)
 9. Run Query
 ```
 SELECT user, host FROM mysql.user;
