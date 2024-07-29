@@ -1,12 +1,12 @@
-# SuperSQA's Added Read Me
+# Added Read Me for docker
 * Forked this repo from: https://github.com/TestLinkOpenSourceTRMS/testlink-code
-* Added my own custom
+* Added my own custom from SuperQA
   * Dockerfile
   * docker-compose.yml
   * run_testlink_container.sh
 
 ## Info:
-* Created my own Dockerfile to be able to use Apache base image
+* Created Dockerfile to be able to use Apache base image
 * To run the container create your own image using Dockerfile in this repo or just use published image.
   * Image: supersqa/testlink:1.9.20 (https://hub.docker.com/repository/docker/supersqa/testlink/general)
 * To build your own image

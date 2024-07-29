@@ -23,5 +23,5 @@ services:
     volumes:
       - ${VOLUME_DIR_MYSQL}:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=rootpassword
+      - MYSQL_ROOT_PASSWORD=11nowayrunway
       - VOLUME_DIR_MYSQL=${VOLUME_DIR_MYSQL}

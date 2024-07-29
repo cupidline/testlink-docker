@@ -1,7 +1,7 @@
 set -x
 set -e
 
-export IMAGE_NAME=supersqa_testlink
+export IMAGE_NAME=testlink_docker
 export VOLUME_DIR_TESTLINK=$(pwd)/volume_testlink
 export VOLUME_DIR_MYSQL=$(pwd)/volume_mysql
 
