@@ -1,4 +1,4 @@
-# Added Read Me for docker
+# Added Read Me for docker run
 * Forked this repo from: https://github.com/TestLinkOpenSourceTRMS/testlink-code
 * Added my own custom from SuperQA
   * Dockerfile
