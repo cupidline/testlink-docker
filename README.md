@@ -21,6 +21,32 @@ cd <to tis repo>
 docker-compose up -d
 ```
 
+## How To Run:
+1. Run `bash build_image_and_run_containers.sh` in terminal
+2. Open `http://localhost:7777/` to open Testlink local
+3. Click `New Installation`
+4. In Acceptance License step, check agree term and license
+5. In Verification of System and configuration requirements click next
+6. In Definition of DB, choose DB as MySQL, link database host to `mysql_testlink:3306`, database admin login with `root:[MYSQL_ROOT_PASSWORD_IN_DOCKER_COMPOSE]`, and Testlink DB `user:password`
+7. will get error connection to database before login
+8. Go to MySQL
+9. Run Query
+```
+SELECT user, host FROM mysql.user;
+```
+```
+SHOW GRANTS FOR  '[user]'@'localhost';
+```
+```
+CREATE USER '[user]'@'%' IDENTIFIED BY  '[password]';
+```
+```
+GRANT SELECT, INSERT, UPDATE, DELETE ON `testlink`.* TO '[user]'@'%' WITH GRANT OPTION;
+```
+```
+flush privileges;
+```
+
 
 #########################################################################
 #########################################################################
